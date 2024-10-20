@@ -1,0 +1,21 @@
+<div id="form__container">
+	<div id="form__container__header">
+		<p>👋 Создать комнату</p>
+	</div>
+
+	<form [formGroup]="form" (ngSubmit)="onSubmit()" id="lobby__form">
+		<div class="form__field__wrapper">
+			<label>Название</label>
+			<input type="text" #userNameInput required minlength="1" formControlName="name" name="name" required
+				placeholder="Введите название комнаты..." />
+		</div>
+		<div class="form__field__wrapper">
+			<button type="submit">Создать
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+					<path
+						d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
+				</svg>
+			</button>
+		</div>
+	</form>
+</div>

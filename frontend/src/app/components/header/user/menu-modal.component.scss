@@ -1,0 +1,121 @@
+.close {
+ font-size: 1.5rem; /* Размер иконки закрытия */
+    cursor: pointer; /* Указываем, что элемент кликабельный */
+    margin-left: auto; /* Сдвигаем иконку вправо */
+}
+.sidebar {
+  position: fixed; 
+  top: 0; 
+  right: 0; 
+  width: 250px;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  background: #161a2d;
+  transition: all 0.4s ease;
+  width: 260px;
+  padding: 25px 25px 5px 25px;
+}
+
+.sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .sidebar-header img {
+  width: 42px;
+  border-radius: 50%;
+}
+
+.sidebar .sidebar-header h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 23px;
+}
+
+.sidebar:hover .sidebar-links .menu-separator {
+  transition-delay: 0s;
+  transform: scaleX(0);
+}
+
+.sidebar-links {
+  padding: 0;
+  margin: 5px;
+  list-style: none;
+}
+
+.sidebar-links::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 15px 10px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.sidebar-links li a:hover {
+  color: #161a2d;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.user-account {
+  margin-top: auto;
+  padding: 12px 10px;
+  margin-left: -10px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  color: #161a2d;
+}
+
+.user-profile img {
+  width: 42px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.user-profile h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.user-profile span {
+  font-size: 0.775rem;
+  font-weight: 600;
+}
+
+.user-detail {
+  margin-left: 23px;
+  white-space: nowrap;
+}
+
+.sidebar:hover .user-account {
+  background: #fff;
+  border-radius: 4px;
+}
+
+.member__item__circle {
+  width: 40px; /* Ширина круга */
+  height: 40px; /* Высота круга */
+  border-radius: 50%; /* Круглая форма */
+  background-color: #007bff; /* Цвет фона круга */
+  color: white; /* Цвет текста */
+  display: flex;
+  justify-content: center; /* Центрирование текста по горизонтали */
+  align-items: center; /* Центрирование текста по вертикали */
+  margin-right: 10px; /* Отступ справа от круга */
+  font-size: 16px; /* Размер шрифта для первой буквы */
+  font-weight: bold; /* Жирный шрифт для первой буквы */
+}

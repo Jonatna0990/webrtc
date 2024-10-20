@@ -1,0 +1,8 @@
+<main class="container">
+	<div class="room__container">
+		<span class="room__container__name">Комната: {{ getRoomName() }}</span>		
+		<app-members [members]="getRoomMembers()" />		
+		<app-stream-video (notifySwitchAudio)="switchAudio()" (notifySwitchVideo)="switchVideo()" (notifyEndCall)="endCall()" />
+		<!--<app-chat-conversation />-->
+	</div>
+</main>

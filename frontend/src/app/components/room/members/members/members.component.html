@@ -1,0 +1,11 @@
+<section class="members__container">
+	<div class="members__header">
+		<h3>Участников: <strong>{{ members.length }}</strong> </h3>		
+	</div>
+	<div class="member__list">
+		<div class="member__item" *ngFor="let member of members">
+			<div class="member__item__circle">{{ member.name.charAt(0) }}</div>
+			<span class="member__item__name">{{ member.name }}</span>
+		</div>
+	</div>
+</section>

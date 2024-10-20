@@ -1,0 +1,10 @@
+<section class="stream__container">
+	<div class="stream__box">
+		<video class="stream__box__video" #localVideo width='100%' height='100%'> </video>
+	</div>	
+	<div class="stream__box">
+		<video class="stream__box__video" #remoteVideo width='100%' height='100%'> </video>		
+	</div>
+	<div class="streams__container"></div>
+	<app-call-action-btns (notifySwitchAudio)="switchAudio()" (notifySwitchVideo)="switchVideo()" (notifyEndCall)="endCall()" #actionButtons />
+</section>

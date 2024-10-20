@@ -1,0 +1,24 @@
+.stream__actions {
+	display: flex;
+}
+.stream__actions__btn {
+	  margin: 1%;
+	  width: 80px; /* Размер кнопки */
+      height: 80px;
+      border-radius: 50%; /* Круглая форма */
+      border: none; /* Без рамки */
+      background-color: #393939; /* Цвет фона */
+      color: white; /* Цвет иконки */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+}
+
+.stream__actions__btn.disabled {
+	background: gray;
+	svg {
+		color: rosybrown;
+	}
+}

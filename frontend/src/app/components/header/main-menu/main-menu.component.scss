@@ -1,0 +1,128 @@
+#nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000000;
+  background-color: #1a1a1a;
+  padding: 0px 2%;
+  z-index: 999;
+  min-height: 72px;
+
+  #logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 0;
+    margin: 0;
+    color: #ebe0e0;
+
+    img {
+      height: 42px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  #nav__links {
+    display: flex;
+    align-items: center;
+    column-gap: 2em;
+
+    @media (max-width: 520px) {
+      column-gap: 3em;
+    }
+  }
+
+  .nav__link {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 1px;
+
+    &:hover {
+      color: rgb(230, 228, 228);
+      border-color: #845695;
+
+      svg {
+        fill: #845695;
+      }
+    }
+
+    svg {
+      width: 0;
+      height: 0;
+
+      @media (max-width: 640px) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+
+  #create__room__btn {
+    display: block;
+    background-color: #845695;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #845695;
+    }
+  }
+
+  .nav--list {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  #members__button,
+  #chat__button {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    &:hover {
+      svg > path {
+        fill: #845695;
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    #members__button {
+      display: block;
+    }
+
+    .nav__link,
+    #create__room__btn {
+      font-size: 0;
+      border: none;
+
+      #create__room__btn {
+        padding: 0;
+        background-color: transparent;
+        border-radius: 50%;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+.fa-gear {
+  color: darkgray;
+}

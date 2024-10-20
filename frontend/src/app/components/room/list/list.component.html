@@ -1,0 +1,28 @@
+<div>
+<div *ngIf="isAnyRoom();else need_create">
+	<p class="rooms__list">Список доступных комнат</p>
+
+	<div *ngFor="let room of data.rooms">
+		<mat-list color="red">
+			<mat-list-item>
+				<span matListItemTitle>Комната: {{ room.name }}</span>
+				<span matListItemLine>Количевто пользователей:{{ room.usersCount }}</span>
+				<button (click)="openRoom(room)" matListItemLine>Подключиться</button>
+			</mat-list-item>
+		</mat-list>		
+	</div>
+
+</div>
+<ng-template #need_create>
+	<div class="rooms__not__container">
+		<div class="rooms__not__text">
+			<span>Нет доступных комнат</span>
+		</div>		
+	</div>
+</ng-template>
+<div class="rooms__not__link">
+	<!--<a href="/room/create"> Создать комнату</a>-->
+	<a (click)="createRoom()"> Создать комнату</a>
+</div>
+</div>
+

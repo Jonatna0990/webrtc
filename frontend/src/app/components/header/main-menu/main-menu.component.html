@@ -1,0 +1,24 @@
+<header id="nav">
+    <div class="nav--list">
+        <a [routerLink]="['/']" routerLinkActive="router-link-active">
+            <h3 id="logo">
+                <span>Chatyoo</span>
+            </h3>
+        </a>
+    </div>
+
+    <div *ngIf="isAuth()" id="nav__links">
+        <a class="nav__link" id="create__room__btn" [routerLink]="['/room/list']"
+            routerLinkActive="router-link-active">
+            Список комнат
+            <i class="fa-solid fa-bars"></i>
+        </a> 
+        <a (click)="openMenu()">
+            <div style="font-size: 2rem;">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        </a>
+    </div>
+
+   
+</header>

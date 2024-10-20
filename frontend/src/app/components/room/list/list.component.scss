@@ -1,0 +1,38 @@
+.rooms__not__container {
+	display: grid;
+    margin: 1%;
+}
+
+.rooms__not__text {
+	font-size: large;
+}
+
+.rooms__not__link {
+	margin: 10px;
+}
+
+.rooms__not__link > a {
+
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    background-color: #845695;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+	max-width: 200px;
+}
+span {
+	color: #fff;
+}
+
+mat-list {
+    background: #575757;
+    margin: 1%;
+}
+
+.rooms__list {
+    font-size: x-large;
+    margin: 1%;
+}
