@@ -46,6 +46,20 @@ export class EventsGateway implements OnGatewayInit, OnGatewayConnection, OnGate
 		//await this.shareRoomsInfo();
 	}
 
+		//Share rooms
+	@SubscribeMessage('test')
+  	async test(		
+		@ConnectedSocket() 
+		user: Socket,
+
+		@MessageBody() 
+		data: any
+	): Promise<void> {
+		user.join('test');
+		user.to('test').emit('test', user.id)
+  	} 
+
+
 	//Share rooms
 	@SubscribeMessage(ACTIONS.SHARE_ROOMS)
   	async shareRooms(		
@@ -493,7 +507,7 @@ export class EventsGateway implements OnGatewayInit, OnGatewayConnection, OnGate
 			
 			let room = await this.roomService.getRoomById(data.roomId);
 			if(room) { 
-				this.server.sockets.in(room.id).emit(ACTIONS.S_GET_ICE_CANDIDATE, {
+				user.to(room.id).emit(ACTIONS.S_GET_ICE_CANDIDATE, {
 					userId: user.id,
 					userName: verifiedUser.name,
 					candidate: data.iceCandidate

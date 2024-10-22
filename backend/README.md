@@ -86,6 +86,8 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
 
 
-Пример авторизации м пайпов
+Пример авторизации и пайпов
 https://github.com/anton-g/quizify/blob/master/server/src/common/socket-auth.pipe.ts#L7
 https://github.com/anton-g/quizify/blob/4008f6c76f2be34738e53d3c08075aac6a265b6c/server/src/game/gateways/host.gateway.ts
+
+For testing: chrome://webrtc-internals/

@@ -3,6 +3,8 @@
 		<span class="room__container__name">Комната: {{ getRoomName() }}</span>		
 		<app-members [members]="getRoomMembers()" />		
 		<app-stream-video (notifySwitchAudio)="switchAudio()" (notifySwitchVideo)="switchVideo()" (notifyEndCall)="endCall()" />
+		<input [(ngModel)]="message" type="text">
+		<button (click)="sendMessage()"> Send</button>
 		<!--<app-chat-conversation />-->
 	</div>
 </main>

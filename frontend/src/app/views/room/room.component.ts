@@ -17,11 +17,12 @@ import { RoomsTypeDto } from '../../data/room/dto/shared/rooms.type.dto';
 import { GetOfferResponseDto } from '../../data/room/dto/response/getOfferResponse.dto';
 import { WebRTCResponse } from '../../data/room/dto/response/answerResponse.dto';
 import { IceCandidateResponseDto } from '../../data/room/dto/response/iceCandidateResponse.dto';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-room',
   standalone: true,
-  imports: [MainMenuComponent, StreamVideoComponent, ConversationComponent, MembersComponent, NgFor],
+  imports: [MainMenuComponent, StreamVideoComponent, ConversationComponent, MembersComponent, NgFor, FormsModule],
   templateUrl: './room.component.html',
   styleUrl: './room.component.scss',
 })
@@ -45,6 +46,8 @@ export class RoomComponent implements OnInit, AfterViewInit, OnDestroy  {
   private webrtcOnOfferCreateSubscription: Subscription;
   private webrtcOnAnswerCreateSubscription: Subscription;
   private currentRoomId: string;
+
+  public message: string;
 
  @ViewChild(StreamVideoComponent) 
  streamVideoComponent!: StreamVideoComponent;  
@@ -186,6 +189,7 @@ export class RoomComponent implements OnInit, AfterViewInit, OnDestroy  {
      return Array.isArray(users) && users.length > 0 ? users : []; 
   }
    async setVideoStreams() {
+    console.log("SET VIDEO STREAMS");
     this.webrtcService.setLocalStream(this.streamVideoComponent.getLocalVideoElement());
     this.webrtcService.setRemoteStream(this.streamVideoComponent.getRemoteVideoElement());  
   }
@@ -203,6 +207,11 @@ export class RoomComponent implements OnInit, AfterViewInit, OnDestroy  {
   endCall() {
     this.socketService.leaveRoom({roomId: this.currentRoomId});
     this.router.navigate(['']);
+  }
+
+  sendMessage() {
+    this.webrtcService.sendMessage(this.message);
+    this.message = '';
   }
 
 }
